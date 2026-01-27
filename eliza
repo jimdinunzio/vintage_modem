@@ -1,0 +1,5 @@
+clear
+. git/chatbots/.venv/bin/activate
+cd git/chatbots
+python eliza_openai_chatbot.py
+

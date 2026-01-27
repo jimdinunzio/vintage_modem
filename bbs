@@ -1,0 +1,39 @@
+
+# write a script that keeps a list of BBSes (including name, address and port number) and when run prints 
+# the numbered list of BBSes and prompts the user to select one showing only the name to connect to. When the user selects a BBS,
+# the script should connect to the BBS using telnet using the address and port number.
+# The list of bbses should be easy to add on to by the programmer
+# List of BBSes
+
+#!/bin/bash
+bbses=(
+    "8-Bit Archive|bbs.8-bitarchive.com|2223"
+    "Aerodrome|theaerodromebbs.com|6502"
+    "Willamette Apple Connection|wacbbs.ddns.net|6502"
+    "VCF SoCal BBS|vcfsocalbbs.ddns.net|6502"
+    "Southern Amis|southernamis.ddns.net|23"
+    "Amis 86|amis86.ddns.net|9000"
+)
+
+# clear the screen
+clear
+# Print the list of BBSes
+echo "Available BBSes:"
+echo
+for i in "${!bbses[@]}"; do
+    IFS='|' read -r name address port <<< "${bbses[$i]}"
+    echo "$((i+1)). $name"
+done
+
+echo
+# Prompt the user to select a BBS
+read -p "Select a BBS to call (1-${#bbses[@]}): " selection
+
+# Validate the selection
+if [[ $selection -ge 1 && $selection -le ${#bbses[@]} ]]; then
+    IFS='|' read -r name address port <<< "${bbses[$((selection-1))]}"
+    echo "Calling $name..."
+    telnet "$address" "$port"
+else
+    echo "Invalid selection."
+fi
