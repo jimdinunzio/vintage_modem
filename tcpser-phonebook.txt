@@ -1,0 +1,17 @@
+1001 = vcfsocalbbs.ddns.net:6502
+1002 = absinthebbs.net:1940
+1003 = blackflag.acid.org:23
+1004 = holdfastbbs.org:23
+1005 = call.rofbbs.com:6800
+1006 = bbs.8-bitarchive.com:2223
+1007 = amigacity.xyz:23
+1008 = amigaunderground.com:2300
+1009 = centralontarioremote.com:2300
+1010 = ciaamiga.org:6400
+1011 = frontiers.dotoran.com:9892
+1012 = fw2.cnetbbs.net:6800
+1013 = heightsbbs.heightspc.net:6860
+1014 = bbs.idbbs.ca:1581
+1015 = nightbite.redirectme.net:2323
+1016 = bbs.retro32.com:1337
+

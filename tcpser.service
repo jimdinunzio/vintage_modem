@@ -1,0 +1,25 @@
+[Unit]
+Description=TCPSer Modem Emulator
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/tcpser \
+  -d /dev/serial0 \
+  -s 38400 \
+  -p 6400 \
+  -l 3 \
+  -i "&K0" \
+  -n \
+  -S 2400 \
+  -t /home/pi/tcpser-phonebook.txt \
+  -a
+Restart=always
+RestartSec=2
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
+
